@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="3ccc67e9-3908-44ad-b3c8-149c8395319b" name="PHP" url="http://138.68.68.130/~rait.kivinurm/">
-        <fileTransfer host="138.68.68.130" port="22" rootFolder="/home/rait.kivinurm/public/PhP" accessType="FTPS">
+        <fileTransfer host="138.68.68.130" port="22" rootFolder="/home/rait.kivinurm/public/PhP" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
