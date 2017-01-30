@@ -7,23 +7,21 @@
  */
 
 class text
-{//text class begin
-    // class varibles = instsnce varibles
-
+{// text class begin
+    // class variables = instance variables
     var $str = '';
-
-    //methods
-    //set text function
-
-    function setText($s)
-    {
+    // contructor
+    function __construct($s = ''){
+        $this->setText($s);
+    }// construct
+    // methods
+    // set text function
+    function setText($s){
         $this->str = $s;
-    }//setTEXT
-
-    // show text Function
-    function show()
-    {
-        echo $this->$str . '<br/>';
-    }//show
-}//text class end
+    }// setText
+    // show text function
+    function show(){
+        echo $this->str.'<br/>';
+    }// show
+}// text class end
 ?>
