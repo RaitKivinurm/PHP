@@ -5,7 +5,7 @@
  * Date: 09.02.2017
  * Time: 16:39
  */
-
+// if TMPL_DIR is not defined
 if(!defined('TMPL_DIR')){
     // define this constant and use in class template
     define('TMPL_DIR', '../tmpl/');
@@ -15,17 +15,18 @@ class template
     // class variables
     var $file = ''; // template file name
     var $content = false; // template content - now is empty
+    var $vars = array(); // table for real values of html template output
     // class methods
-	// construct
-	function __construct($f){
-    		$this->file = $f;
-    		$this->loadFile();
-    	}// construct
+    // construct
+    function __construct($f){
+        $this->file = $f;
+        $this->loadFile();
+    }// construct
     function loadFile(){
         $f = $this->file; // use file name variable
         // if some problem with tmpl directory
         if(!is_dir(TMPL_DIR)){
-            echo 'Kataloogi '.TMPL_DIR.' ei leitud<br/>';
+            echo 'Kataloogi '.TMPL_DIR.' ei ole leitud<br/>';
             exit;
         }
         // if we already in tmpl directory - $this->file is 'tmpl/file.html'
@@ -43,10 +44,11 @@ class template
             $this->readFile($f);
         }
         if($this->content === false){
-            echo 'Ei suutnud lugeda '.$this->file.'´i.<br/>';
+            echo 'Ei saanud lugeda faili '.$this->file.'.<br/>';
             exit;
         }
     }// loadFile
     function readFile($f){
         $this->content = file_get_contents($f);
-    }
+    }// readFile
+}// class end
