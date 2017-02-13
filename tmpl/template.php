@@ -43,9 +43,10 @@ class template
             $this->readFile($f);
         }
         if($this->content === false){
-            echo 'Ei suutnud lugeda '.$this->file.'.<br/>';
+            echo 'Ei suutnud lugeda '.$this->file.'´i.<br/>';
             exit;
         }
     }// loadFile
     function readFile($f){
         $this->content = file_get_contents($f);
+    }
