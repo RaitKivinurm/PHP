@@ -5,12 +5,12 @@
  * Date: 19.01.2017
  * Time: 12:47
  */
-
+require_once 'conf.php';
 // create and template object
-define('CLASSES_DIR', 'classes/');
-define('TMPL_DIR', 'tmpl/');
-define('STYLE_DIR', 'css/');
-require_once TMPL_DIR.'template.php';
+//define('CLASSES_DIR', 'classes/');
+//define('TMPL_DIR', 'tmpl/');
+//define('STYLE_DIR', 'css/');
+require_once CLASSES_DIR.'template.php';
 // and use it
 // create an template object,
 // set up the file name for template
@@ -29,6 +29,9 @@ $tmpl->set('header', 'minu lehe pealkiri');
 //echo '</pre>';
 // output template content set up with real values
 echo $tmpl->parse();
+
+//echo '<pre>';
+//print_r($db);
 ?>
 
 
