@@ -17,16 +17,18 @@ require_once CLASSES_DIR.'template.php';
 // load template file content
 $tmpl = new template('main.html');
 // add pairs of temlate element names and real values
-$tmpl->set('menu', 'minu menüü');
-$tmpl->set('nav_bar', 'minu navigatsioon');
+//$tmpl->set('menu', 'minu menüü');
+require_once 'menu.php';
+require_once 'act.php';
+$tmpl->set('nav_bar', $sess->user_data['username']);
 $tmpl->set('lang_bar', 'minu keeleriba');
 $tmpl->set('content', 'minu sisu');
 $tmpl->set('style', STYLE_DIR.'main.css');
 $tmpl->set('header', 'minu lehe pealkiri');
 // control the content of template object
-//echo '<pre>';
-//print_r($tmpl);
-//echo '</pre>';
+echo '<pre>';
+//print_r($sess);
+echo '</pre>';
 // output template content set up with real values
 echo $tmpl->parse();
 
